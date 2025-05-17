@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hoja de Vida Profesional - Saul Tapiero Murillo</title>
+  <style>
+    :root {
+      --facebook-azul: #1877f2;
+      --facebook-azul-oscuro: #0e5aaf;
+      --facebook-azul-claro: #e7f3ff;
+      --gris-fondo: #f0f4fb;
+      --blanco: #ffffff;
+      --texto-oscuro: #050505;
+      --borde-suave: #c2d1f0;
+      --gris-texto: #555a6e;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--gris-fondo);
+      color: var(--texto-oscuro);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Barra superior estilo Facebook */
+    .barra-facebook {
+      background-color: var(--facebook-azul);
+      height: 56px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-facebook {
+      width: 40px;
+      height: 40px;
+      fill: white;
+      cursor: pointer;
+    }
+
+    /* Nueva sección superior debajo de la barra azul */
+    .header-superior {
+      background: var(--blanco);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      box-shadow: 0 2px 6px rgba(24, 119, 242, 0.3);
+      border-radius: 0 0 12px 12px;
+      user-select: none;
+    }
+
+    /* Menú simple estilo Facebook */
+    .menu-facebook {
+      display: flex;
+      gap: 18px;
+      font-weight: 600;
+      color: var(--facebook-azul-oscuro);
+      font-size: 14px;
+    }
+    .menu-facebook a {
+      text-decoration: none;
+      color: var(--facebook-azul-oscuro);
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+    }
+    .menu-facebook a:hover {
+      background-color: var(--facebook-azul-claro);
+    }
+
+    /* Info usuario derecha */
+    .info-usuario {
+      text-align: right;
+      color: var(--facebook-azul-oscuro);
+    }
+    .info-usuario strong {
+      font-size: 16px;
+      display: block;
+      user-select: text;
+    }
+    .info-usuario small {
+      font-size: 13px;
+      color: var(--gris-texto);
+      user-select: text;
+    }
+
+    /* Contenedor principal */
+    .contenedor {
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      padding: 0 20px;
+    }
+
+    /* Encabezado perfil */
+    .encabezado {
+      background: var(--blanco);
+      padding: 2rem;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+      border: 1px solid var(--borde-suave);
+      margin-top: 1rem;
+    }
+
+    .foto-perfil {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid var(--facebook-azul);
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(24, 119, 242, 0.8);
+      object-fit: cover;
+      background: var(--blanco);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--facebook-azul-oscuro);
+    }
+
+    p.descripcion {
+      margin: 0.5rem 0 0 0;
+      font-weight: 600;
+      font-size: 18px;
+      color: var(--facebook-azul);
+    }
+
+    .contacto {
+      margin-top: 1rem;
+      font-size: 14px;
+      color: var(--gris-texto);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      user-select: none;
+    }
+
+    /* Secciones */
+    .seccion {
+      background: var(--blanco);
+      padding: 1.8rem 2rem;
+      margin-top: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(24, 119, 242, 0.25);
+      border: 1px solid var(--borde-suave);
+      transition: box-shadow 0.3s ease;
+    }
+    .seccion:hover {
+      box-shadow: 0 6px 20px rgba(24, 119, 242, 0.5);
+    }
+
+    h2 {
+      color: var(--facebook-azul);
+      margin-bottom: 1.3rem;
+      font-weight: 700;
+      font-size: 26px;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      user-select: none;
+    }
+
+    .linea-tiempo {
+      border-left: 5px solid var(--facebook-azul);
+      padding-left: 1.8rem;
+    }
+
+    .tarjeta-experiencia {
+      background: var(--facebook-azul-claro);
+      padding: 1.3rem 1.5rem;
+      border-radius: 14px;
+      margin-bottom: 1.8rem;
+      border: 1px solid var(--facebook-azul-oscuro);
+      box-shadow: 0 2px 8px rgba(24, 119, 242, 0.2);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .tarjeta-experiencia:hover {
+      background: var(--facebook-azul);
+      color: var(--blanco);
+      box-shadow: 0 6px 20px rgba(24, 119, 242, 0.6);
+    }
+
+    .tarjeta-experiencia h3 {
+      margin: 0 0 6px 0;
+      font-weight: 700;
+      font-size: 22px;
+      user-select: none;
+    }
+
+    .tarjeta-experiencia p {
+      font-weight: 600;
+      margin: 0 0 10px 0;
+      color: var(--facebook-azul-oscuro);
+    }
+
+    .tarjeta-experiencia:hover p {
+      color: var(--blanco);
+    }
+
+    .tarjeta-experiencia ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: disc;
+      color: var(--texto-oscuro);
+      font-size: 16px;
+      user-select: none;
+    }
+    .tarjeta-experiencia:hover ul {
+      color: var(--blanco);
+    }
+
+    .habilidades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .barra-progreso {
+      height: 14px;
+      background: var(--facebook-azul-claro);
+      border-radius: 12px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+    .nivel-habilidad {
+      height: 100%;
+      background-color: var(--facebook-azul);
+      border-radius: 12px 0 0 12px;
+      box-shadow: 0 0 8px var(--facebook-azul);
+      transition: width 0.8s ease-in-out;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .seccion, .encabezado {
+        box-shadow: none;
+        border: none;
+        color: black !important;
+        background: white !important;
+      }
+      .tarjeta-experiencia:hover {
+        background: white !important;
+        color: black !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior con logo Facebook -->
+  <div class="barra-facebook">
+    <!-- Logo Facebook SVG -->
+    <svg class="logo-facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Facebook">
+      <path d="M22.675 0h-21.35C.597 0 0 .598 0 1.333v21.334C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.313h3.59l-.467 3.622h-3.123V24h6.116c.73 0 1.324-.598 1.324-1.333V1.333C24 .598 23.405 0 22.675 0z"/>
+    </svg>
+  </div>
+
+  <!-- Nueva sección superior con menú y datos -->
+  <div class="header-superior">
+    <nav class="menu-facebook" aria-label="Menú principal">
+      <a href="#perfil">Perfil</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#competencias">Competencias</a>
+      <a href="#academica">Académica</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+
+  <div class="contenedor">
+    <header class="encabezado" id="perfil">
+      <img src="Imagenes/Imagen de WhatsApp 2025-05-15 a las 17.08.16_b0c007b7.jpg" alt="Foto de perfil" class="foto-perfil" />
+      <h1>Saul Tapiero Murillo</h1>
+      <p class="descripcion">Ingeniero Mecánico Senior</p>
+      <div class="contacto" id="contacto">
+        📞 321 555 1234 | 📧 saul.tapiero@email.com | 📍WASHINTON, USA
+      </div>
+    </header>
+
+    <main>
+      <section class="seccion" id="experiencia">
+        <h2>💼 Experiencia Profesional</h2>
+        <div class="linea-tiempo">
+          <div class="tarjeta-experiencia">
+            <h3>Jefe de Mantenimiento Industrial</h3>
+            <p><strong>Grupo Argos</strong> | 2018 - Presente</p>
+            <ul>
+              <li>Liderar equipo de 25 técnicos especializados</li>
+              <li>Reducción de costos de mantenimiento en 40%</li>
+              <li>Implementación sistema de gestión predictiva</li>
+            </ul>
+          </div>
+
+          <div class="tarjeta-experiencia">
+            <h3>Supervisor de Producción</h3>
+            <p><strong>Autopartes S.A.</strong> | 2010 - 2017</p>
+            <ul>
+              <li>Optimización de procesos productivos</li>
+              <li>Capacitación de personal técnico</li>
+              <li>Mejora de eficiencia en línea de producción</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion" id="competencias">
+        <h2>🛠 Competencias Clave</h2>
+        <div class="habilidades-grid">
+          <div>
+            <h4>Gestión de Mantenimiento</h4>
+            <div class="barra-progreso">
+              <div class="nivel-habilidad" style="width: 95%"></div>
+            </div>
+          </div>
+          <div>
+            <h4>Automatización Industrial</h4>
+            <div class="barra-progreso">
+              <div class="nivel-habilidad" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion" id="academica">
+        <h2>🎓 Trayectoria Académica</h2>
+        <div class="tarjeta-experiencia">
+          <h3>Maestría en Ingeniería Mecánica</h3>
+          <p>Universidad Nacional de Colombia | 2015</p>
+          <p>Tesis: "Optimización de sistemas hidráulicos en entornos industriales"</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

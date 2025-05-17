@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil de Sandra Patricia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-facebook: #1877f2;
+      --azul-oscuro: #0e4da2;
+      --gris-claro: #f0f2f5;
+      --texto-oscuro: #050505;
+      --acento: #ff6b81;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: var(--gris-claro);
+      color: var(--texto-oscuro);
+    }
+
+    header {
+      background: var(--azul-facebook);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .foto-perfil {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 3.5rem;
+    }
+
+    .nombre {
+      margin-top: 9rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .subtitulo {
+      font-size: 1.2rem;
+      color: #dce6f1;
+    }
+
+    .boton-agregar {
+      margin-top: 1rem;
+      background: white;
+      color: var(--azul-facebook);
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .boton-agregar:hover {
+      background: #e4e6eb;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .seccion {
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .seccion h2 {
+      color: var(--azul-facebook);
+      margin-bottom: 1rem;
+    }
+
+    .item {
+      margin-bottom: 1rem;
+    }
+
+    .item h3 {
+      margin: 0;
+      color: var(--azul-oscuro);
+    }
+
+    .item p {
+      margin: 0.2rem 0 0.5rem;
+    }
+
+    .habilidades {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .habilidad {
+      background: var(--gris-claro);
+      padding: 1rem;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .barra {
+      height: 8px;
+      background: linear-gradient(to right, var(--azul-facebook), var(--acento));
+      border-radius: 4px;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      .foto-perfil {
+        width: 100px;
+        height: 100px;
+        top: 2rem;
+      }
+      .nombre {
+        margin-top: 7rem;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="foto-madre.jpg" alt="Foto de perfil" class="foto-perfil">
+    <h1 class="nombre">Sandra Patricia Murillo</h1>
+    <p class="subtitulo">Psicóloga Organizacional</p>
+    <button class="boton-agregar">Agregar a amigos</button>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <h2>📌 Sobre mí</h2>
+      <p>Psicóloga con más de 12 años de experiencia en desarrollo organizacional. Enfocada en potenciar el talento humano, con habilidades en coaching, evaluación de clima laboral y liderazgo empresarial.</p>
+    </section>
+
+    <section class="seccion">
+      <h2>💼 Experiencia Profesional</h2>
+      <div class="item">
+        <h3>Directora de Talento Humano - Tech Solutions</h3>
+        <p>2019 - Presente</p>
+        <ul>
+          <li>Rediseño del sistema de bienestar laboral con enfoque humanista.</li>
+          <li>Gestión de un equipo de 15 personas.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3>Consultora Organizacional - Consultores SAS</h3>
+        <p>2013 - 2018</p>
+        <ul>
+          <li>Desarrollo de talleres de liderazgo.</li>
+          <li>Planes de carrera y cultura empresarial.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2>🎓 Educación</h2>
+      <div class="item">
+        <h3>Maestría en Psicología Organizacional</h3>
+        <p>Universidad de los Andes | 2015</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <h2>⭐ Habilidades</h2>
+      <div class="habilidades">
+        <div class="habilidad">
+          <strong>Coaching Ejecutivo</strong>
+          <div class="barra" style="width: 90%;"></div>
+        </div>
+        <div class="habilidad">
+          <strong>Evaluación de Clima</strong>
+          <div class="barra" style="width: 85%;"></div>
+        </div>
+        <div class="habilidad">
+          <strong>Selección por Competencias</strong>
+          <div class="barra" style="width: 80%;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Sandra Patricia Murillo 
+  </footer>
+</body>
+</html>
